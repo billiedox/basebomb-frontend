@@ -5,9 +5,9 @@ import { LaunchpadStatus } from 'config/constants/types'
 import { useTokenSaleContract } from 'hooks/useContract'
 import { DeserializedLaunchpad } from 'state/types'
 import usePresale, { PresaleConfig, PresaleStatus, UserStatus } from 'hooks/usePresale'
+import { formatBigNumber } from 'utils/formatBalance'
 import LabelButton from './LabelButton'
 import ContributeModal from './ContributeModal'
-import { formatBigNumber } from 'utils/formatBalance'
 
 export interface Props {
   status: LaunchpadStatus

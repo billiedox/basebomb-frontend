@@ -8,7 +8,7 @@ export const MatchExampleA: React.FC<{ isDark: boolean } & SvgProps> = ({ isDark
           d="M0.995361 28.9362C0.995361 20.4114 7.94723 13.5007 16.5228 13.5007H113.569C122.145 13.5007 129.097 20.4114 129.097 28.9362C129.097 37.4609 122.145 44.3716 113.569 44.3716H16.5228C7.94723 44.3716 0.995361 37.4609 0.995361 28.9362Z"
           fill={isDark ? 'none' : 'white'}
         />
-        <mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="0" y="13" width="130" height="32">
+        <mask id="mask0" maskUnits="userSpaceOnUse" x="0" y="13" width="130" height="32">
           <path
             fillRule="evenodd"
             clipRule="evenodd"

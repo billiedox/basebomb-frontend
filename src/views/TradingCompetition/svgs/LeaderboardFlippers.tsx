@@ -174,7 +174,6 @@ const RibbonDownMid: React.FC<SvgProps> = (props) => {
         />
         <mask
           id="leaderboard_flippers_mask0"
-          mask-type="alpha"
           maskUnits="userSpaceOnUse"
           x="55"
           y="18"
@@ -200,7 +199,6 @@ const RibbonDownMid: React.FC<SvgProps> = (props) => {
         </g>
         <mask
           id="leaderboard_flippers_mask1"
-          mask-type="alpha"
           maskUnits="userSpaceOnUse"
           x="79"
           y="18"
