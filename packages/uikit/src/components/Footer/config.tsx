@@ -1,6 +1,6 @@
 import { Language } from "../LangSelector/types";
 import { FooterLinkType } from "./types";
-import { TwitterIcon, TelegramIcon, RedditIcon, InstagramIcon, GithubIcon, DiscordIcon, MediumIcon } from "../Svg";
+import { TwitterIcon, TelegramIcon, RedditIcon, InstagramIcon, GithubIcon, DiscordIcon, MediumIcon, GitBookIcon } from "../Svg";
 
 export const footerLinks: FooterLinkType[] = [
   {
@@ -80,12 +80,12 @@ export const socials = [
   {
     label: "Twitter",
     icon: TwitterIcon,
-    href: "https://orbitalss.link/WbTw",
+    href: "https://twitter.com/BaseBOMB_",
   },
   {
     label: "Telegram",
     icon: TelegramIcon,
-    href: "https://orbitalss.link/WbTG"
+    href: "https://t.me/BaseBomber"
     // items: [
     //   {
     //     label: "English",
@@ -154,20 +154,25 @@ export const socials = [
   //   icon: RedditIcon,
   //   href: "https://reddit.com/r/pancakeswap",
   // },
+  // {
+  //   label: "Discord",
+  //   icon: DiscordIcon,
+  //   href: "https://orbitalss.link/WbDc",
+  // },
+  // {
+  //   label: "Medium",
+  //   icon: MediumIcon,
+  //   href: "https://pancakeswap.medium.com/",
+  // },
+  // {
+  //   label: "Instagram",
+  //   icon: InstagramIcon,
+  //   href: "https://instagram.com/pancakeswap_official",
+  // },
   {
-    label: "Discord",
-    icon: DiscordIcon,
-    href: "https://orbitalss.link/WbDc",
-  },
-  {
-    label: "Medium",
-    icon: MediumIcon,
-    href: "https://pancakeswap.medium.com/",
-  },
-  {
-    label: "Instagram",
-    icon: InstagramIcon,
-    href: "https://instagram.com/pancakeswap_official",
+    label: "GitBook",
+    icon: GitBookIcon,
+    href: "https://basebomb.gitbook.io/",
   },
 ];
 

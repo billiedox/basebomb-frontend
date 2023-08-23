@@ -53,6 +53,7 @@ export { default as ErrorIcon } from "./Icons/Error";
 export { default as ExpandIcon } from "./Icons/Expand";
 export { default as FarmIcon } from "./Icons/Farm";
 export { default as GithubIcon } from "./Icons/Github";
+export { default as GitBookIcon } from "./Icons/GitBook";
 export { default as GroupsIcon } from "./Icons/Groups";
 export { default as HamburgerCloseIcon } from "./Icons/HamburgerClose";
 export { default as HamburgerIcon } from "./Icons/Hamburger";
