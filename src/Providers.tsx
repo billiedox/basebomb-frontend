@@ -21,7 +21,7 @@ const Providers: React.FC<{ store: Store }> = ({ children, store }) => {
       <Provider store={store}>
         <MatchBreakpointsProvider>
           <ToastsProvider>
-            <NextThemeProvider>
+            <NextThemeProvider defaultTheme="dark">
               <StyledThemeProvider>
                 <LanguageProvider>
                   <SWRConfig
