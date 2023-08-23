@@ -14,12 +14,12 @@ const sentryWebpackPluginOptions =
         //   release, url, org, project, authToken, configFile, stripPrefix,
         //   urlPrefix, include, ignore
         silent: false, // Logging when deploying to check if there is any problem
-        validate: true,
+        // validate: true,
         // Mark the release as Production
         // https://github.com/getsentry/sentry-webpack-plugin/blob/master/src/index.js#L522
-        deploy: {
-          env: process.env.VERCEL_ENV,
-        },
+        // deploy: {
+        //   env: process.env.VERCEL_ENV,
+        // },
         // For all available options, see:
         // https://github.com/getsentry/sentry-webpack-plugin#options.
       }
@@ -131,4 +131,4 @@ const config = {
   },
 }
 
-module.exports = withBundleAnalyzer(withSentryConfig(withTM(config), sentryWebpackPluginOptions))
+module.exports = withBundleAnalyzer(withSentryConfig(withTM(config), {sentryWebpackPluginOptions}))
