@@ -1,0 +1,150 @@
+{
+  "name": "OrbitalSwap Default List",
+  "timestamp": "2022-01-26T11:45:09Z",
+  "version": {
+    "major": 4,
+    "minor": 0,
+    "patch": 0
+  },
+  "tags": {},
+  "logoURI": "https://opbomb.finance/logo.png",
+  "keywords": ["pancake", "default"],
+  "tokens": [
+    {
+      "name": "WBNB Token",
+      "symbol": "WBNB",
+      "address": "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://opbomb.finance/images/tokens/0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c.png"
+    },
+    {
+      "name": "Tytan",
+      "symbol": "TYTAN",
+      "address": "0x912F594Fd096E67e0c0A18D496A9f70E3171c330",
+      "chainId": 56,
+      "decimals": 5,
+      "logoURI": "https://opbomb.finance/images/tokens/0x912F594Fd096E67e0c0A18D496A9f70E3171c330.png"
+    },
+    {
+      "name": "Wrapped TYTAN",
+      "symbol": "wTYTAN",
+      "address": "0x3593d409484e36aAd862101054FbDBe1C9a4fC9b",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://opbomb.finance/images/tokens/0x3593d409484e36aAd862101054FbDBe1C9a4fC9b.png"
+    },
+    {
+      "name": "OrbitalSwap Token",
+      "symbol": "ORB",
+      "address": "0x42b98A2f73a282D731b0B8F4ACfB6cAF3565496B",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://opbomb.finance/images/tokens/0x42b98A2f73a282D731b0B8F4ACfB6cAF3565496B.png"
+    },
+    {
+      "name": "BUSD Token",
+      "symbol": "BUSD",
+      "address": "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://opbomb.finance/images/tokens/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56.png"
+    },
+    {
+      "name": "Ethereum Token",
+      "symbol": "ETH",
+      "address": "0x2170Ed0880ac9A755fd29B2688956BD959F933F8",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://opbomb.finance/images/tokens/0x2170Ed0880ac9A755fd29B2688956BD959F933F8.png"
+    },
+    {
+      "name": "BTCB Token",
+      "symbol": "BTCB",
+      "address": "0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://opbomb.finance/images/tokens/0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c.png"
+    },
+    {
+      "name": "Binance-Peg Avalanche Token",
+      "symbol": "AVAX",
+      "address": "0x1CE0c2827e2eF14D5C4f29a091d735A204794041",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://opbomb.finance/images/tokens/0x1CE0c2827e2eF14D5C4f29a091d735A204794041.png"
+    },
+    {
+      "name": "PIGGY",
+      "symbol": "PIGGY",
+      "address": "0x31CdD9F5a6a1E39a38A6b073Fc3FaBE6CbfeAc76",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://opbomb.finance/images/tokens/0x31CdD9F5a6a1E39a38A6b073Fc3FaBE6CbfeAc76.png"
+    },
+    {
+      "name": "Tether USD",
+      "symbol": "USDT",
+      "address": "0x55d398326f99059fF775485246999027B3197955",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://opbomb.finance/images/tokens/0x55d398326f99059fF775485246999027B3197955.png"
+    },
+    {
+      "name": "BUSD Token",
+      "symbol": "BUSD",
+      "address": "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://opbomb.finance/images/tokens/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56.png"
+    },
+    {
+      "name": "Binance-Peg USD Coin",
+      "symbol": "USDC",
+      "address": "0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://opbomb.finance/images/tokens/0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d.png"
+    },
+    {
+      "name": "MAGIK",
+      "symbol": "MAGIK",
+      "address": "0xD68F75b3aa54bee23e6Ac3AD4b3C28D3E6319725",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://opbomb.finance/images/tokens/0xD68F75b3aa54bee23e6Ac3AD4b3C28D3E6319725.png"
+    },
+    {
+      "name": "DRIP Token",
+      "symbol": "DRIP",
+      "address": "0x20f663CEa80FaCE82ACDFA3aAE6862d246cE0333",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://opbomb.finance/images/tokens/0x20f663CEa80FaCE82ACDFA3aAE6862d246cE0333.png"
+    },
+    {
+      "name": "Dibs USD",
+      "symbol": "USDibs",
+      "address": "0x8d2aa7b23aBE16E7eCa845F64C65A314d4ABa35A",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://opbomb.finance/images/tokens/0x8d2aa7b23aBE16E7eCa845F64C65A314d4ABa35A.png"
+    },
+    {
+      "name": "DSHARE",
+      "symbol": "DSHARE",
+      "address": "0x26d3163b165BE95137CEe97241E716b2791a7572",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://opbomb.finance/images/tokens/0x26d3163b165BE95137CEe97241E716b2791a7572.png"
+    },
+    {
+      "name": "Binance-Peg Chainlink Token",
+      "symbol": "LINK",
+      "address": "0xF8A0BF9cF54Bb92F17374d9e9A321E6a111a51bD",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://opbomb.finance/images/tokens/0xF8A0BF9cF54Bb92F17374d9e9A321E6a111a51bD.png"
+    }
+  ]
+}
