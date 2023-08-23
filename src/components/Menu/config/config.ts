@@ -31,7 +31,7 @@ const config: (t: ContextApi['t'], isDark: boolean, languageCode?: string) => Co
     label: t('Trade'),
     icon: SwapIcon,
     fillIcon: SwapFillIcon,
-    href: '/swap',
+    href: '/trade',
     showItemsOnMobile: false,
     items: [],
   },
@@ -40,13 +40,15 @@ const config: (t: ContextApi['t'], isDark: boolean, languageCode?: string) => Co
     href: '/farms',
     icon: EarnIcon,
     fillIcon: EarnFillIcon,
+    showItemsOnMobile: false,
     items: [],
   },
   {
     label: t('Pools'),
-    href: '/lottery',
+    href: '/pools',
     icon: TrophyIcon,
     fillIcon: TrophyFillIcon,
+    showItemsOnMobile: false,
     items: [],
   },
   {
@@ -54,13 +56,14 @@ const config: (t: ContextApi['t'], isDark: boolean, languageCode?: string) => Co
     href: '/presale',
     icon: TrophyIcon,
     fillIcon: TrophyFillIcon,
+    showItemsOnMobile: false,
     items: [],
   },
-  {
-    label: t('Docs'),
-    href: 'https://docs.tytan.finance',
-    items: [],
-  },
+  // {
+  //   label: t('Docs'),
+  //   href: 'https://docs.tytan.finance',
+  //   items: [],
+  // },
 ]
 
 export default config

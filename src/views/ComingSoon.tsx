@@ -1,11 +1,11 @@
 import styled from 'styled-components'
-import { Button, Heading, Text, LogoIcon } from '@pancakeswap/uikit'
+import { Button, Heading } from '@pancakeswap/uikit'
 import Page from 'components/Layout/Page'
 import { useTranslation } from 'contexts/Localization'
 import useTheme from 'hooks/useTheme'
 import Link from 'next/link'
 
-const StyledNotFound = styled.div`
+const StyledComingSoon = styled.div`
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -13,24 +13,26 @@ const StyledNotFound = styled.div`
   justify-content: center;
 `
 
-const NotFound = () => {
+const Text = styled(Heading).attrs({ as: 'h3', size: 'lg' })`
+  text-align: left;
+  font-size: 30px;
+`
+const ComingSoon = () => {
   const { t } = useTranslation()
   const { theme } = useTheme()
 
   return (
     <Page>
-      <StyledNotFound>
-        <LogoIcon isDark={theme.isDark} width="64px" mb="8px" />
-        <Heading scale="xxl">404</Heading>
-        <Text mb="16px">{t('Oops, page not found.')}</Text>
+      <StyledComingSoon>
+        <Text mb='13px'>{t('Coming soon')}</Text>
         <Link href="/" passHref>
           <Button as="a" scale="sm">
             {t('Back Home')}
           </Button>
         </Link>
-      </StyledNotFound>
+      </StyledComingSoon>
     </Page>
   )
 }
 
-export default NotFound
+export default ComingSoon

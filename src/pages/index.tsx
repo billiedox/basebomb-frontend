@@ -1,7 +1,9 @@
+import { useEffect } from 'react'
 import { FACTORY_ADDRESS_MAP } from '@orbitalswap/sdk'
 import { getUnixTime, sub } from 'date-fns'
 import { gql } from 'graphql-request'
 import { GetStaticProps } from 'next'
+import { useRouter } from 'next/router'
 import { SWRConfig } from 'swr'
 import { bitQueryServerClient, infoServerClient } from 'utils/graphql'
 import { getCakeVaultAddress } from 'utils/addressHelpers'
@@ -12,18 +14,23 @@ import { CHAIN_ID } from 'config/constants/networks'
 import Home from '../views/Home'
 
 const IndexPage = ({ totalTx30Days, addressCount30Days, tvl }) => {
+  const router = useRouter();
+  useEffect(() => {
+    router.push('/presale');
+  }, [])
   return (
-    <SWRConfig
-      value={{
-        fallback: {
-          totalTx30Days,
-          addressCount30Days,
-          tvl,
-        },
-      }}
-    >
-      <Home />
-    </SWRConfig>
+    // <SWRConfig
+    //   value={{
+    //     fallback: {
+    //       totalTx30Days,
+    //       addressCount30Days,
+    //       tvl,
+    //     },
+    //   }}
+    // >
+    //   <Home />
+    // </SWRConfig>
+    <></>
   )
 }
 

@@ -94,39 +94,19 @@ const config = {
     return [
       {
         source: '/swap',
-        destination: '/',
+        destination: '/404',
         permanent: true,
       },
       {
-        source: '/create/:currency*',
-        destination: '/add/:currency*',
+        source: '/farms',
+        destination: '/404',
         permanent: true,
       },
       {
-        source: '/farms/archived',
-        destination: '/farms/history',
+        source: '/pools',
+        destination: '/404',
         permanent: true,
-      },
-      {
-        source: '/pool',
-        destination: '/liquidity',
-        permanent: true,
-      },
-      {
-        source: '/staking',
-        destination: '/pools',
-        permanent: true,
-      },
-      {
-        source: '/syrup',
-        destination: '/pools',
-        permanent: true,
-      },
-      {
-        source: '/collectibles',
-        destination: '/nfts',
-        permanent: true,
-      },
+      }
     ]
   },
 }

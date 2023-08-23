@@ -45,20 +45,9 @@ const OwnerActivityContainer = styled(Flex)`
   gap: 22px;
 `
 
-const LaunchpadPage = ({ launchpad }) => {
+const LaunchpadPage = () => {
 
   useLaunchpadsPageFetch()
-
-  const {
-    // softcap,
-    // hardcap,
-    // totalSold,
-    // totalRaised,
-    // startDate,
-    // endDate,
-    releaseAt,
-    // presaleStatus,
-  } = launchpad
 
   const [state, setState] = useState({
     status: null,
@@ -85,7 +74,8 @@ const LaunchpadPage = ({ launchpad }) => {
 
   const startDate = startTime?.toNumber();
   const endDate = endTime?.toNumber();
-
+  const releaseAt = 0;
+  
   useEffect(() => {
     const interval = setInterval(async () => {
       if (softcap?.gt(0)) {
