@@ -3,7 +3,7 @@ import { ContextApi } from 'contexts/Localization/types'
 import { PageMeta } from './types'
 
 export const DEFAULT_META: PageMeta = {
-  title: 'OrbitalSwap',
+  title: 'opBOMB',
   description:
     'The Future of Defi, The Next Generation In Defi Tools and Trading',
   image: 'https://opbomb.finance/images/hero.png',
@@ -25,6 +25,8 @@ const getPathList = (t: ContextApi['t']): PathList => {
       '/prediction': { title: t('Prediction') },
       '/prediction/leaderboard': { title: t('Leaderboard') },
       '/farms': { title: t('Farms') },
+      '/trade': { title: t('Swap') },
+      '/presale': { title: t('Presale') },
       '/farms/auction': { title: t('Farm Auctions') },
       '/pools': { title: t('Pools') },
       '/lottery': { title: t('Lottery') },
@@ -43,7 +45,7 @@ const getPathList = (t: ContextApi['t']): PathList => {
       '/pancake-squad': { basePath: true, title: t('Pancake Squad') },
     },
 
-    defaultTitleSuffix: t('OrbitalSwap'),
+    defaultTitleSuffix: t('opBOMB'),
   }
 }
 
