@@ -47,7 +47,7 @@ const LaunchpadDescription: React.FC = () => {
   return (
     <StyledLaunchpadDescription>
       <Divider />
-      <Description>{`Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum`}</Description>
+      <Description>{`Welcome to BaseBOMB, the frontline of decentralized finance where strategy meets opportunity. BaseBOMB is Built on the formidable BaseChain backed by CoinBase, BaseBOMB is more than just a token—it's a full-scale financial operation aimed at revolutionizing the DeFi landscape. With innovative offerings like our v2, v3 DeX, Launchpad, NFT Staking, and automated arbitrage bots, Single Side Staking BaseBOMB is designed for those ready to enlist in a financial future that's explosive in potential. Enlist today and march towards victory with BaseBOMB—the arsenal you need for unparalleled success in the DeFi battlefields.`}</Description>
       <Divider />
     </StyledLaunchpadDescription>
   )

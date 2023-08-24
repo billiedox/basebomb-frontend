@@ -58,7 +58,7 @@ const usePresale = () => {
 
   const onEmergencyWithdraw = useCallback(async () => {
     const tx = await callWithGasPrice(tokenSaleContract, 'emergencyWithdraw', [])
-    tx.wait()
+    await tx.wait()
 
     updateStatus()
   }, [tokenSaleContract, callWithGasPrice])
@@ -66,7 +66,7 @@ const usePresale = () => {
   const onContribute = useCallback(
     async (amount: string) => {
       const tx = await callWithGasPrice(tokenSaleContract, 'contribute', [], { value: amount })
-      tx.wait()
+      await tx.wait()
 
       updateStatus()
     },
@@ -74,6 +74,7 @@ const usePresale = () => {
   )
 
   const updateStatus = async () => {
+    console.log("updating status");
     const totalRaised = await tokenSaleContract.totalRaised()
     const totalSold = await tokenSaleContract.totalSold()
     const totalContributors = await tokenSaleContract.funderCounter()

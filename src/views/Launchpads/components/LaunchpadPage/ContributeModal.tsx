@@ -31,12 +31,12 @@ const ContributeModal: React.FC<Props> = ({ contributeLimit, minPerTx, onDismiss
 
   const buyTokenSymbol = 'ETH'
 
-  const isDisabled = pendingTx || parseUnits(value).isZero() || isLimit || tooSmall || insufficient
+  const isDisabled = pendingTx || Number(value) === 0 || isLimit || tooSmall || insufficient
 
   useEffect(() => {
     setInsufficient(Number(value) > Number(ethBalance?.toExact()))
-    reachedLimit(parseUnits(value).gt(contributeLimit))
-    setTooSmall(parseUnits(value).lt(minPerTx))
+    reachedLimit(parseUnits(Number(value).toString()).gt(contributeLimit))
+    setTooSmall(parseUnits(Number(value).toString()).lt(minPerTx))
   }, [value, contributeLimit, minPerTx])
 
   return (
@@ -76,7 +76,7 @@ const ContributeModal: React.FC<Props> = ({ contributeLimit, minPerTx, onDismiss
             try {
               setPendingTx(true)
               if (onContribute) {
-                await onContribute(parseUnits(value).toString())
+                await onContribute(parseUnits(Number(value).toString()).toString())
               }
             } catch (err) {
               console.error(err)
