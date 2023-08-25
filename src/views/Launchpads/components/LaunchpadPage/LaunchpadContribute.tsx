@@ -81,28 +81,7 @@ const LaunchpadContribute: React.FC<Props> = ({ status, presaleConfig, presaleSt
     )
   }
 
-  // if (status === 'filled') {
-  //   const claimable = contributedAmount.toNumber() > 0
-  //   return (
-  //     <>
-  //       <LabelButton
-  //         disabled={!claimable}
-  //         buttonLabel={claimable ? 'Claimed' : 'Claim'}
-  //         label={`Your contribution (${buyTokenSymbol})`}
-  //         value={
-  //           // eslint-disable-next-line no-nested-ternary
-  //           formatBigNumber(contributedAmount ?? BigNumber.from(0))
-  //         }
-  //         onClick={claim}
-  //       />
-  //       <Text fontSize="14px" color="textSubtle">
-  //         {isFinished ? `Tokens will be airdropped on Avax` : `${percentOfUserContribution.toFixed(2)}% of total`}
-  //       </Text>
-  //     </>
-  //   )
-  // }
-
-  if (status === 'ended') {
+  if (status === 'ended' || status === 'filled') {
     return (
       <>
         <LabelButton

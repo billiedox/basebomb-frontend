@@ -10,7 +10,6 @@ export interface LaunchpadTimeProps {
   status: LaunchpadStatus
   secondsUntilStart: number
   secondsUntilEnd: number
-  block: number
 }
 
 const Details = styled.div`
@@ -46,7 +45,7 @@ const Item = styled.div`
   margin-bottom: 1.5rem;
 `
 
-const LaunchpadTime: React.FC<LaunchpadTimeProps> = ({ isLoading, status, secondsUntilStart, secondsUntilEnd, block }) => {
+const LaunchpadTime: React.FC<LaunchpadTimeProps> = ({ isLoading, status, secondsUntilStart, secondsUntilEnd }) => {
   const {t} = useTranslation()
   const countdownToUse = status === 'upcoming' ? secondsUntilStart : secondsUntilEnd
   const timeUntil = getTimePeriods(countdownToUse)
@@ -55,7 +54,7 @@ const LaunchpadTime: React.FC<LaunchpadTimeProps> = ({ isLoading, status, second
     return <Details>{t('Loading...')}</Details>
   }
 
-  if (status === 'cancelled' || status === 'ended' || status === 'filled') {
+  if (status === 'ended' || status === 'filled') {
     return (
       <Details>
         <Text bold>{t(`This pool has ${status}.`)}</Text>

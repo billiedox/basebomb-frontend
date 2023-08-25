@@ -113,9 +113,6 @@ const LaunchpadPage = () => {
 
   const { t } = useTranslation()
 
-  const isActive = state.status === 'live' || state.status === 'filled'
-  const isFinished = state.status === 'finished'
-
   return (
     <LaunchpadLayout id="current-launchpad" py={['24px', '24px', '40px']}>
       <Container>
@@ -144,7 +141,6 @@ const LaunchpadPage = () => {
                   status={state.status}
                   secondsUntilStart={state.secondsUntilStart}
                   secondsUntilEnd={state.secondsUntilEnd}
-                  block={isActive || isFinished ? endDate : startDate}
                 />
                 <LaunchpadProgress
                   softcap={Number(formatBigNumber(softcap ?? BigNumber.from(0)))}
