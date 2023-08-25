@@ -103,7 +103,7 @@ const LaunchpadContribute: React.FC<Props> = ({ status, presaleConfig, presaleSt
   }
 
   if (status === 'claimable') {
-    const claimable = contributedAmount.toNumber() > 0
+    const claimable = contributedAmount.gt(0)
     return (
       <>
         <LabelButton
