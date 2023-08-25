@@ -20,7 +20,7 @@ const LaunchpadProgress: React.FC<LaunchpadProgressProps> = ({ softcap, hardcap,
     <StyledProgress>
       <Progress primaryStep={progress1} />
       <Flex alignItems="center" justifyContent="space-between"> 
-        <Text>{raised} {buyTokenSymbol}</Text>
+        <Text>{raised.toFixed(3)} {buyTokenSymbol}</Text>
         <Text>{hardcap} {buyTokenSymbol}</Text>
       </Flex>
     </StyledProgress>

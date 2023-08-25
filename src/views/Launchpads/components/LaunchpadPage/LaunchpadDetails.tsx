@@ -77,7 +77,7 @@ const LaunchpadDetails: React.FC<LaunchpadDetailsProps> = ({ presaleConfig, pres
         <Item>
           <Display>{t('Total raised (% of target)')}</Display>
           <Text>
-            {`${formatBigNumber(totalRaised ?? BigNumber.from(0))} ${buyTokenSymbol}`}
+            {`${Number(formatBigNumber(totalRaised ?? BigNumber.from(0))).toFixed(3)} ${buyTokenSymbol}`}
             {/* {`(${totalRaised.div(hardcap).times(100).toFixed(2)}%)`} */}
           </Text>
         </Item>

@@ -31,7 +31,7 @@ const LaunchpadStatusCard: React.FC<LaunchpadStatusProps> = ({ status, presaleCo
 
   const { min_contribution: minPerTx, max_contribution: maxPerUser, listing_price: presalePrice } = presaleConfig || {}
   const { totalContributors } = presaleStatus || {}
-  const { claimed_amount: contributedAmount } = userStatus || {}
+  const { amount: contributedAmount, claimed_amount: totalTokensBought } = userStatus || {}
 
   const buyTokenSymbol = 'ETH'
 
@@ -70,11 +70,11 @@ const LaunchpadStatusCard: React.FC<LaunchpadStatusProps> = ({ status, presaleCo
 
         <Item>
           <Display>{t('You Purchased')}</Display>
-          <Text>{formatBigNumber(contributedAmount ?? BigNumber.from(0)) || 0}</Text>
+          <Text>{purchaseTokenAmount.toFixed(2) || 0}</Text>
         </Item>
         <Item>
           <Display>{t('Total Tokens Bought')}</Display>
-          <Text>{purchaseTokenAmount || 0}</Text>
+          <Text>{formatBigNumber(totalTokensBought ?? BigNumber.from(0))}</Text>
         </Item>
       </StyledLaunchpadStatus>
     </>
