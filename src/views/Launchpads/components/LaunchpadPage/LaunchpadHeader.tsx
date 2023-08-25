@@ -40,7 +40,7 @@ const LaunchpadHeader: React.FC = () => {
     <StyledLaunchpadHeader mb="12px" alignItems="center">
       <BombFilledIcon src="/images/bomb-filled.png" width={80} height={80} />
       <div>
-        <Name>BASEBOMB FINANCE</Name>
+        <Name>BASEBOMB</Name>
       </div> 
     </StyledLaunchpadHeader>
   )

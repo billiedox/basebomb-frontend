@@ -47,7 +47,7 @@ const LaunchpadDescription: React.FC = () => {
   return (
     <StyledLaunchpadDescription>
       <Divider />
-      <Description>{`Welcome to BaseBOMB, the frontline of decentralized finance where strategy meets opportunity. BaseBOMB is Built on the formidable BaseChain backed by CoinBase, BaseBOMB is more than just a token—it's a full-scale financial operation aimed at revolutionizing the DeFi landscape. With innovative offerings like our v2, v3 DeX, Launchpad, NFT Staking, and automated arbitrage bots, Single Side Staking BaseBOMB is designed for those ready to enlist in a financial future that's explosive in potential. Enlist today and march towards victory with BaseBOMB—the arsenal you need for unparalleled success in the DeFi battlefields.`}</Description>
+      <Description>{`Welcome to BaseBOMB, your go-to for groundbreaking DeFi innovations. Launching on BaseChain, we're more than a token. Our platform features state-of-the-art DeX versions, a Launchpad, NFT Staking, automated arbitrage bots, and Single Side Staking and much more, coming in future. Ready for explosive financial growth? Enlist with BaseBOMB today.`}</Description>
       <Divider />
     </StyledLaunchpadDescription>
   )
