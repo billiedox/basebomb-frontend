@@ -56,17 +56,17 @@ function MyApp(props: AppProps) {
         />
         <meta
           name="description"
-          content="opBOMB - The Future of DeFi"
+          content="BASEBOMB - The Future of DeFi"
         />
         <meta name="theme-color" content="#38D7CD" />
-        <meta name="twitter:image" content="https://opbomb.finance/images/hero.png" />
+        <meta name="twitter:image" content="https://basebomb.finance/images/hero.png" />
         <meta
           name="twitter:description"
-          content="opBOMB - The Future of DeFi, The Next Generation In Defi Tools and Trading."
+          content="BASEBOMB - The Future of DeFi, The Next Generation In Defi Tools and Trading."
         />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="opBOMB - The Future of DeFi" />
-        <title>opBOMB</title>
+        <meta name="twitter:title" content="BASEBOMB - The Future of DeFi" />
+        <title>BASEBOMB</title>
       </Head>
       <Providers store={store}>
         <Blocklist>

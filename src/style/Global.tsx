@@ -11,11 +11,10 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Inter', sans-serif;
   }
   body {
-    background-image: linear-gradient(0deg, #1F162C 0%, #1F162C 100%), linear-gradient(180deg, #0D1529 0%, rgba(91, 43, 96, 0.00) 100%);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    background-color: #150D1E;
+    background-color: #060e1b;
 
     img {
       height: auto;

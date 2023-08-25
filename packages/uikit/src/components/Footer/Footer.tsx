@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { baseColors, darkColors, lightColors } from "../../theme/colors";
 import { Flex, Box } from "../Box";
+import {Text} from "../Text";
 import { Link } from "../Link";
 import {
   StyledFooter,
@@ -18,7 +19,7 @@ import CakePrice from "../CakePrice/CakePrice";
 import { LogoWithTextIcon, ArrowForwardIcon } from "../Svg";
 import { Button } from "../Button";
 import { Image } from "../Image";
-import { Colors, useMatchBreakpoints } from "../..";
+import { useMatchBreakpoints } from "../..";
 import SocialLinks from "./Components/SocialLinks";
 
 const EarthQuake = styled.img<{ isMobile: boolean; isMd: boolean }>`
@@ -39,7 +40,7 @@ const Bomb = styled.img<{ isMobile: boolean; isMd: boolean }>`
   top: ${({ isMobile, isMd }) => (isMobile || isMd ? "50%" : "auto")};
   transform: ${({ isMobile, isMd }) => (isMobile || isMd ? "rotateZ(15deg) translate(-50%, -50%)" : "rotateZ(15deg)")};
   right: 50px;
-  opacity: ${({ isMobile, isMd }) => (isMobile || isMd ? "0.1" : "0.6")};
+  opacity: ${({ isMobile, isMd }) => (isMobile || isMd ? "0.5" : "1")};
   max-width: ${({ isMobile, isMd }) => (isMd ? "80%" : isMobile ? "120%" : "400px")};
   z-index: 1;
 `;
@@ -60,7 +61,7 @@ const MenuItem: React.FC<FooterProps> = ({
     <StyledFooter p={["40px 16px", null, "56px 40px 32px 40px"]} {...props} justifyContent="center">
       <Flex flexDirection="column" width={["100%", null, "1200px;"]} zIndex={100}>
         <StyledIconMobileContainer display={["block", null, "none"]}>
-          <LogoWithTextIcon isDark width="130px" />
+          <Image src="/images/basebomb.png" isDark width={130} height={15} />
         </StyledIconMobileContainer>
         <Flex
           order={[1, null, 2]}
@@ -72,7 +73,8 @@ const MenuItem: React.FC<FooterProps> = ({
           <Box>
             <Box display={["none", null, "block"]}>
               <SocialLinks order={[2, null, 1]} pb={["42px", null, "32px"]} />
-              <LogoWithTextIcon isDark width="160px" />
+              <Image src="/images/basebomb.png" isDark width={160} height={17} />
+              <Text mt={12}>runs on the fastest Layer2 blockchain Base</Text>
             </Box>
           </Box>
           {items?.map((item) => (
@@ -100,7 +102,7 @@ const MenuItem: React.FC<FooterProps> = ({
         </Flex>
       </Flex>
       <EarthQuake src="/images/earthquake.png" isMd={isMd} isMobile={isMobile} />
-      <Bomb src="images/flaming-bomb.png" isMd={isMd} isMobile={isMobile} />
+      <Bomb src="images/flamingbomb.png" isMd={isMd} isMobile={isMobile} />
     </StyledFooter>
   );
 };

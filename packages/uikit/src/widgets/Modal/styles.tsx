@@ -12,8 +12,8 @@ export const ModalHeader = styled.div<{ background?: string }>`
   border-bottom: 1px solid ${({ theme }) => theme.colors.walletModalStrong};
   display: flex;
   padding: 12px 24px;
-  background-image: url('/images/bg.png');
-  background-size: 200%;
+  background-image: url('/images/modal_header.png');
+  object-fit: cover;
   background-position-x: -100px;
 `;
 

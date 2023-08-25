@@ -25,7 +25,6 @@ const Background = styled.img`
   min-height: 1000px;
   background-color: lightgray;
   opacity: 0.5;
-  mix-blend-mode: overlay;
 `;
 
 const Wrapper = styled.div`
@@ -98,7 +97,7 @@ const Menu: React.FC<NavProps> = ({
   const { isMobile, isMd } = useMatchBreakpoints();
   const [showMenu, setShowMenu] = useState(true);
   const refPrevOffset = useRef(typeof window === "undefined" ? 0 : window.pageYOffset);
-  
+
   const totalTopMenuHeight = MENU_HEIGHT;
 
   useEffect(() => {
@@ -137,7 +136,7 @@ const Menu: React.FC<NavProps> = ({
   const subLinksMobileOnly = subLinks?.filter((subLink) => subLink.isMobileOnly);
   return (
     <MenuContext.Provider value={{ linkComponent }}>
-      <Background src="/images/bg.png" />
+      <Background src="/images/main_bg.png" />
       <Wrapper>
         <FixedContainer showMenu={showMenu} height={totalTopMenuHeight}>
           <StyledNav>

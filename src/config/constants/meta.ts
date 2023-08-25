@@ -3,10 +3,10 @@ import { ContextApi } from 'contexts/Localization/types'
 import { PageMeta } from './types'
 
 export const DEFAULT_META: PageMeta = {
-  title: 'opBOMB',
+  title: 'BASEBOMB',
   description:
     'The Future of Defi, The Next Generation In Defi Tools and Trading',
-  image: 'https://opbomb.finance/images/hero.png',
+  image: 'https://basebomb.finance/images/hero.png',
 }
 interface PathList {
   paths: { [path: string]: { title: string; basePath?: boolean; description?: string } }
@@ -45,7 +45,7 @@ const getPathList = (t: ContextApi['t']): PathList => {
       '/pancake-squad': { basePath: true, title: t('Pancake Squad') },
     },
 
-    defaultTitleSuffix: t('opBOMB'),
+    defaultTitleSuffix: t('BASEBOMB'),
   }
 }
 

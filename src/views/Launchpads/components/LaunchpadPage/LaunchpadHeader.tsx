@@ -10,6 +10,8 @@ interface LaunchpadHeaderProps {
 }
 
 const BombFilledIcon = styled.img`
+  margin-left: 20px;
+  margin-bottom: 8px;
   max-width: 120px;
 `;
 const StyledLaunchpadHeader = styled(Flex)`
@@ -36,7 +38,7 @@ const LaunchpadHeader: React.FC = () => {
   const { theme } = useTheme()
   return (
     <StyledLaunchpadHeader mb="12px" alignItems="center">
-      <BombFilledIcon src="/images/bomb-filled.svg" />
+      <BombFilledIcon src="/images/bomb-filled.png" width={80} height={80} />
       <div>
         <Name>OPBOMB FINANCE</Name>
       </div> 

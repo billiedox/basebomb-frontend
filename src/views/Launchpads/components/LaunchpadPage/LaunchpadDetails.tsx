@@ -40,7 +40,7 @@ const LaunchpadDetails: React.FC<LaunchpadDetailsProps> = ({ presaleConfig, pres
   } = presaleStatus || {}
 
   const buyTokenSymbol = 'ETH'
-  const presaleTokenSymbol = 'opBOMB';
+  const presaleTokenSymbol = 'BASEBOMB';
 
   return (
     <>

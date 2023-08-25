@@ -54,8 +54,8 @@ const config: (t: ContextApi['t'], isDark: boolean, languageCode?: string) => Co
   {
     label: t('Presale'),
     href: '/presale',
-    icon: TrophyIcon,
-    fillIcon: TrophyFillIcon,
+    icon: LaunchpadIcon,
+    fillIcon: LaunchpadIcon,
     showItemsOnMobile: false,
     items: [],
   },
