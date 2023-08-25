@@ -9,6 +9,7 @@ import { useETHBalance } from 'state/wallet/hooks'
 import CurrencyInputPanel from 'components/CurrencyInputPanel'
 import usePresale from 'hooks/usePresale'
 import { formatBigNumber } from 'utils/formatBalance'
+import { fetchMerkleProof } from 'views/Launchpads/api'
 
 interface Props {
   contributeLimit: BigNumber
@@ -76,7 +77,8 @@ const ContributeModal: React.FC<Props> = ({ contributeLimit, minPerTx, onDismiss
             try {
               setPendingTx(true)
               if (onContribute) {
-                await onContribute(parseUnits(Number(value).toString()).toString())
+                const merkleProof = await fetchMerkleProof(account);
+                await onContribute(parseUnits(Number(value).toString()).toString(), merkleProof)
               }
             } catch (err) {
               console.error(err)

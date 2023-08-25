@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { BigNumber } from '@ethersproject/bignumber'
-import { Box, Card, CardBody, CardRibbon, Flex, useMatchBreakpoints } from '@pancakeswap/uikit'
+import { Box, Card, CardBody, CardRibbon, Flex, Message, Text, useMatchBreakpoints } from '@pancakeswap/uikit'
 import { useWeb3React } from '@web3-react/core'
 import { useTranslation } from 'contexts/Localization'
 import ConnectWalletButton from 'components/ConnectWalletButton'
@@ -19,6 +19,8 @@ import LaunchpadDetails from './LaunchpadDetails'
 import LaunchpadTime from './LaunchpadTime'
 import LaunchpadContribute from './LaunchpadContribute'
 import LaunchpadStatusCard from './LaunchpadStatusCard'
+import { isWhiteListed } from 'views/Launchpads/api'
+import { whitelistAddr } from 'config/constants/whitelist'
 
 const StyledLaunchpad = styled(Card)`
   background-repeat: no-repeat;
@@ -34,7 +36,7 @@ const StyledLaunchpad = styled(Card)`
 
 const StatusCard = styled(Card)`
   background-repeat: no-repeat;
-background-size: contain;
+  background-size: contain;
   margin-left: auto;
   margin-right: auto;
   // max-width: 437px;
@@ -46,7 +48,6 @@ const OwnerActivityContainer = styled(Flex)`
 `
 
 const LaunchpadPage = () => {
-
   useLaunchpadsPageFetch()
 
   const [state, setState] = useState({
@@ -57,25 +58,19 @@ const LaunchpadPage = () => {
   })
 
   const { account } = useWeb3React()
-  const { presaleConfig, presaleStatus, userStatus} = usePresale()
+  const [ whiteListed, setWhiteListed ] = useState<boolean>(false)
 
-  const {
-    softcap,
-    hardcap,
-    startTime,
-    endTime
-  } = presaleConfig || {};
+  const { presaleConfig, presaleStatus, userStatus } = usePresale()
 
-  const {
-    totalRaised,
-    totalSold,
-    statusEnum
-  } = presaleStatus || {};
+  const { softcap, hardcap, startTime, endTime } = presaleConfig || {}
 
-  const startDate = startTime?.toNumber();
-  const endDate = endTime?.toNumber();
-  const releaseAt = 0;
-  
+  const { totalRaised, totalSold, statusEnum } = presaleStatus || {}
+
+  const startDate = startTime?.toNumber()
+  const endDate = endTime?.toNumber()
+
+  const releaseAt = 0
+
   useEffect(() => {
     const interval = setInterval(async () => {
       if (softcap?.gt(0)) {
@@ -109,6 +104,13 @@ const LaunchpadPage = () => {
     return () => clearInterval(interval)
   }, [startDate, endDate, totalSold, softcap, hardcap, presaleStatus, totalRaised, releaseAt])
 
+  useEffect(() => {
+    if (!account) return
+    (async () => {
+      setWhiteListed(await isWhiteListed(account))
+    })()
+  }, [account])
+
   const { t } = useTranslation()
 
   const isActive = state.status === 'live' || state.status === 'filled'
@@ -117,6 +119,13 @@ const LaunchpadPage = () => {
   return (
     <LaunchpadLayout id="current-launchpad" py={['24px', '24px', '40px']}>
       <Container>
+        {account && !whiteListed && (
+          <Message variant="warning" mb="24px">
+            <Box>
+              <Text fontWeight="bold">{t('You are not whitelisted')}</Text>
+            </Box>
+          </Message>
+        )}
         <LaunchpadLayoutWrapper>
           <Flex flexDirection="column" width="100%">
             <StyledLaunchpad>
@@ -155,9 +164,12 @@ const LaunchpadPage = () => {
             </StyledLaunchpad>
             <StatusCard>
               <CardBody>
-                <LaunchpadStatusCard status={state.status} presaleConfig={presaleConfig}
-                    presaleStatus={presaleStatus}
-                    userStatus={userStatus} />
+                <LaunchpadStatusCard
+                  status={state.status}
+                  presaleConfig={presaleConfig}
+                  presaleStatus={presaleStatus}
+                  userStatus={userStatus}
+                />
               </CardBody>
             </StatusCard>
           </OwnerActivityContainer>

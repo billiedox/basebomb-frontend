@@ -35,7 +35,7 @@ export enum PoolIds {
 }
 
 export type IfoStatus = 'idle' | 'coming_soon' | 'live' | 'finished'
-export type LaunchpadStatus = 'upcoming' | 'live' | 'filled' | 'ended' | 'cancelled'
+export type LaunchpadStatus = 'upcoming' | 'live' | 'filled' | 'ended' | 'claimable'
 
 interface IfoPoolInfo {
   saleAmount: string

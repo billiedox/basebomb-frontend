@@ -16,7 +16,6 @@ export interface PresaleConfig {
   token?: string
   price?: BigNumber
   liquidity_percent: BigNumber
-  liquidity_lockup_time: BigNumber
 }
 
 export interface PresaleStatus {
@@ -35,9 +34,8 @@ export interface PresaleInfo {
   presaleConfig: PresaleConfig
   presaleStatus: PresaleStatus
   userStatus: UserStatus
-  onClaim: () => void
-  onEmergencyWithdraw: () => void
-  onContribute: () => void
+  onClaim: (merkleProof: string[]) => void
+  onContribute: (amount: string, merkleProof: string[]) => void
 }
 
 const usePresale = () => {
@@ -49,23 +47,23 @@ const usePresale = () => {
 
   const { callWithGasPrice } = useCallWithGasPrice()
 
-  const onClaim = useCallback(async () => {
-    const tx = await callWithGasPrice(tokenSaleContract, 'withdraw', [])
+  const onClaim = useCallback(async (merkleProof: string[]) => {
+    const tx = await callWithGasPrice(tokenSaleContract, 'claim', [merkleProof])
     tx.wait()
 
     updateStatus()
   }, [tokenSaleContract, callWithGasPrice])
 
-  const onEmergencyWithdraw = useCallback(async () => {
-    const tx = await callWithGasPrice(tokenSaleContract, 'emergencyWithdraw', [])
-    await tx.wait()
+  // const onEmergencyWithdraw = useCallback(async () => {
+  //   const tx = await callWithGasPrice(tokenSaleContract, 'emergencyWithdraw', [])
+  //   await tx.wait()
 
-    updateStatus()
-  }, [tokenSaleContract, callWithGasPrice])
+  //   updateStatus()
+  // }, [tokenSaleContract, callWithGasPrice])
 
   const onContribute = useCallback(
-    async (amount: string) => {
-      const tx = await callWithGasPrice(tokenSaleContract, 'contribute', [], { value: amount })
+    async (amount: string, merkleProof: string[]) => {
+      const tx = await callWithGasPrice(tokenSaleContract, 'contribute', [merkleProof], { value: amount })
       await tx.wait()
 
       updateStatus()
@@ -74,7 +72,6 @@ const usePresale = () => {
   )
 
   const updateStatus = async () => {
-    console.log("updating status");
     const totalRaised = await tokenSaleContract.totalRaised()
     const totalSold = await tokenSaleContract.totalSold()
     const totalContributors = await tokenSaleContract.funderCounter()
@@ -92,13 +89,24 @@ const usePresale = () => {
     if (tokenSaleContract) {
       (async () => {
         const _presaleConfig = await tokenSaleContract.presaleConfig()
-        setPresaleConfig(_presaleConfig)
+        setPresaleConfig({
+          token: _presaleConfig.token,
+          price: _presaleConfig.price,
+          listing_price: _presaleConfig.listing_price,
+          liquidity_percent: _presaleConfig.liquidity_percent,
+          hardcap: _presaleConfig.hardcap,
+          softcap: _presaleConfig.softcap,
+          min_contribution: _presaleConfig.min_contribution,
+          max_contribution: _presaleConfig.max_contribution,
+          startTime: _presaleConfig.white_startTime,
+          endTime: _presaleConfig.white_endTime
+        })
       })()
       updateStatus()
     }
   }, [tokenSaleContract])
 
-  return { presaleConfig, presaleStatus, userStatus, onClaim, onEmergencyWithdraw, onContribute }
+  return { presaleConfig, presaleStatus, userStatus, onClaim, onContribute }
 }
 
 export default usePresale

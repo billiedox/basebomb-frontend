@@ -1,3 +1,4 @@
+import { current } from '@reduxjs/toolkit'
 import { LaunchpadStatus } from 'config/constants/types'
 
 export const getStatus = (
@@ -11,29 +12,22 @@ export const getStatus = (
 ): LaunchpadStatus => {
   // Add an extra check to currentTime because it takes awhile to fetch so the initial value is 0
   // making the UI change to an inaccurate status
-  if (currentTime === 0) {
+  if (currentTime === 0 || currentTime < startTime) {
     return 'upcoming'
-  }
+  } 
 
-  if (status === 1) return 'cancelled'
+  if (status === 1) return 'ended'
 
-  if (status === 2) return 'ended'
+  if (status === 2) return 'claimable'
 
-  if (currentTime < startTime) {
-    return 'upcoming'
-  }
-
-  if (currentTime > endTime) {
-    if (status === 2) return 'ended'
-  }
+  if (currentTime > endTime) return 'ended'
 
   if (currentTime >= startTime && currentTime <= endTime) {
-    if (status === 2) return 'ended'
     if (raised >= hardcap) {
       return 'filled'
     }
-    return 'live'
   }
-  return 'ended'
+
+  return 'live'
 }
 export default null
