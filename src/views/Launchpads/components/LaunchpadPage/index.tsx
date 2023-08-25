@@ -11,6 +11,8 @@ import { DeserializedLaunchpad } from 'state/types'
 import { useLaunchpadsPageFetch } from 'state/launchpads/hooks'
 import usePresale from 'hooks/usePresale'
 import { formatBigNumber } from 'utils/formatBalance'
+import { isWhiteListed } from 'views/Launchpads/api'
+import { whitelistAddr } from 'config/constants/whitelist'
 import LaunchpadLayout, { LaunchpadLayoutWrapper } from '../LaunchpadLayout'
 import LaunchpadHeader from './LaunchpadHeader'
 import LaunchpadProgress from './LaunchpadProgress'
@@ -19,8 +21,6 @@ import LaunchpadDetails from './LaunchpadDetails'
 import LaunchpadTime from './LaunchpadTime'
 import LaunchpadContribute from './LaunchpadContribute'
 import LaunchpadStatusCard from './LaunchpadStatusCard'
-import { isWhiteListed } from 'views/Launchpads/api'
-import { whitelistAddr } from 'config/constants/whitelist'
 
 const StyledLaunchpad = styled(Card)`
   background-repeat: no-repeat;
