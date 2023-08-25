@@ -61,7 +61,9 @@ const MenuItem: React.FC<FooterProps> = ({
     <StyledFooter p={["40px 16px", null, "56px 40px 32px 40px"]} {...props} justifyContent="center">
       <Flex flexDirection="column" width={["100%", null, "1200px;"]} zIndex={100}>
         <StyledIconMobileContainer display={["block", null, "none"]}>
-          <Image src="/images/basebomb.png" isDark width={130} height={15} />
+          <SocialLinks order={[2, null, 1]} pb={["42px", null, "32px"]} />
+          <Image src="/images/basebomb.png" isDark width={160} height={17} />
+          <Text mt={12}>runs on the fastest Layer2 blockchain Base</Text>
         </StyledIconMobileContainer>
         <Flex
           order={[1, null, 2]}

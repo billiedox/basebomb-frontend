@@ -158,6 +158,7 @@ const LaunchpadPage = () => {
                     presaleStatus={presaleStatus}
                     userStatus={userStatus}
                     status={state.status}
+                    whiteListed={whiteListed}
                   />
                 )}
               </CardBody>

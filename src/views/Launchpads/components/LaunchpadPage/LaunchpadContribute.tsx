@@ -16,9 +16,10 @@ export interface Props {
   presaleConfig: PresaleConfig
   presaleStatus: PresaleStatus
   userStatus: UserStatus
+  whiteListed: boolean
 }
 
-const LaunchpadContribute: React.FC<Props> = ({ status, presaleConfig, presaleStatus, userStatus }) => {
+const LaunchpadContribute: React.FC<Props> = ({ status, presaleConfig, presaleStatus, userStatus, whiteListed }) => {
   const [pendingTx, setPendingTx] = useState(false)
 
   const { account } = useWeb3React();
@@ -63,7 +64,7 @@ const LaunchpadContribute: React.FC<Props> = ({ status, presaleConfig, presaleSt
     return (
       <>
         <LabelButton
-          // disabled={claimed}
+          disabled={!whiteListed}
           buttonLabel={`Buy with ${buyTokenSymbol}`}
           label={`Your contribution (${buyTokenSymbol})`}
           value={
@@ -127,7 +128,7 @@ const LaunchpadContribute: React.FC<Props> = ({ status, presaleConfig, presaleSt
     return (
       <>
         <LabelButton
-          disabled={!claimable}
+          disabled={!claimable || !whiteListed}
           buttonLabel={claimable ? 'Claim' : 'Nothing to claim'}
           label={`Your contribution (${buyTokenSymbol})`}
           value={
