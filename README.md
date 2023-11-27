@@ -1,4 +1,4 @@
-# 🥞 Pancake Frontend
+# BaseBomb Frontend
 
 This project contains the main features of the pancake application.
 
